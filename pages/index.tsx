@@ -15,9 +15,7 @@ export default function Home() {
 
         setAccessToken(token);
       })
-      .catch((err) => {
-        console.log(err);
-
+      .catch(() => {
         router.push("/sign-in");
       });
   }, [router]);
