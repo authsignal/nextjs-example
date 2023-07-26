@@ -1,10 +1,6 @@
 import Iron from "@hapi/iron";
-import { parse, serialize } from "cookie";
-import {
-  GetServerSidePropsContext,
-  NextApiRequest,
-  NextApiResponse,
-} from "next";
+import { serialize } from "cookie";
+import { GetServerSidePropsContext, NextApiResponse } from "next";
 
 const TOKEN_SECRET = process.env.TOKEN_SECRET!;
 const AUTH_COOKIE = "auth-session";
