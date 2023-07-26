@@ -39,6 +39,7 @@ form {
   display: flex;
   flex-direction: column;
   min-width: 300px;
+  max-width: 600px;
 }
 
 h1 {
@@ -75,4 +76,8 @@ input {
 a {
   color: #24b47e;
   cursor: pointer;
+}
+
+div {
+  word-wrap: break-word;
 }

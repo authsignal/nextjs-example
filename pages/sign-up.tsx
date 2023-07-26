@@ -1,6 +1,17 @@
+import { Authsignal } from "@authsignal/browser";
+import { Auth } from "aws-amplify";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import "./init-amplify";
+
+const tenantId = process.env.NEXT_PUBLIC_AUTHSIGNAL_TENANT_ID!;
+const baseUrl = process.env.NEXT_PUBLIC_AUTHSIGNAL_CLIENT_URL!;
+
+let cognitoUser: any;
 
 export default function SignUpPage() {
+  const router = useRouter();
+
   return (
     <main>
       <form
@@ -13,17 +24,31 @@ export default function SignUpPage() {
 
           const email = target.email.value;
 
-          const { error, url } = await fetch("/api/sign-up", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email }),
-          }).then((res) => res.json());
+          const signUpParams = {
+            username: email,
+            password: Math.random().toString(36).slice(-16) + "X",
+          };
 
-          if (error) {
-            alert(error);
-          } else {
-            window.location.href = url;
+          await Auth.signUp(signUpParams);
+
+          cognitoUser = await Auth.signIn(email);
+
+          const { token } = cognitoUser.challengeParam;
+
+          const authsignal = new Authsignal({ tenantId, baseUrl });
+
+          const data = await authsignal.passkey.signUp({
+            token,
+            userName: email,
+          });
+
+          if (!data) {
+            return alert("Sign up error");
           }
+
+          await Auth.sendCustomChallengeAnswer(cognitoUser, data);
+
+          router.push("/");
         }}
       >
         <label htmlFor="email">Email</label>
