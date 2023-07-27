@@ -1,4 +1,4 @@
-# Authsignal Next.js + AWS Cognito Example
+# Authsignal Next.js + AWS Cognito Passkeys Example
 
 This example shows how to integrate [Authsignal](https://www.authsignal.com/) with [Next.js](https://nextjs.org/) and [AWS Cognito](https://aws.amazon.com/cognito/).
 
