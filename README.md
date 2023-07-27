@@ -2,6 +2,8 @@
 
 This example shows how to integrate [Authsignal](https://www.authsignal.com/) with [Next.js](https://nextjs.org/) and [AWS Cognito](https://aws.amazon.com/cognito/).
 
+If you're looking for a similar example but for React Native instead of the Web, you can find one [here](https://github.com/authsignal/react-native-passkey-example/tree/with-aws-cognito).
+
 ## 1. Installation
 
 Clone the repo on the `with-aws-cognito` branch:
