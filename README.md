@@ -82,6 +82,14 @@ These lambdas don't have any interesting interaction with Authsignal but are req
 
 ## 4. The app
 
+#### Running the app
+
+To start the app run the following command:
+
+```
+yarn dev
+```
+
 #### Sign up
 
 We use Amplify to begin sign up, which invokes the create auth challenge lambda and receives an initial token as a `challengeParam`.
