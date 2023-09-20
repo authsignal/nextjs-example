@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz#bd9154aec9983f77b3a034ecaa015c2e4201f6cf"
   integrity sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==
 
-"@authsignal/node@^0.0.45":
-  version "0.0.45"
-  resolved "https://registry.yarnpkg.com/@authsignal/node/-/node-0.0.45.tgz#d0ab1f00937fc39d2e57040a3f34777ebb3340d5"
-  integrity sha512-mVNBFQxSChnXzUQ7EXx6f2MHw11p1A8R/yk5Lirwv7ilDodLl0SH7Y7wjYx2NyEkJE88ehzSf+zGcHG9gvFQWQ==
+"@authsignal/node@0.0.48":
+  version "0.0.48"
+  resolved "https://registry.yarnpkg.com/@authsignal/node/-/node-0.0.48.tgz#b36d71962588ae2f96d08c31499e900ef45417f4"
+  integrity sha512-SzX75Qo27gY6rKC6jT/W5/M4T9JEW2ANlYjf8MRXaOlGPjOM6tNSLBDM6bvJSdgM7iSZYJ8vKnCqANhmNffHag==
   dependencies:
     axios "^0.27.2"
     jsonwebtoken "^8.5.1"
@@ -36,48 +36,6 @@
     js-yaml "^4.1.0"
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
-
-"@hapi/b64@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@hapi/b64/-/b64-6.0.1.tgz#786b47dc070e14465af49e2428c1025bd06ed3df"
-  integrity sha512-ZvjX4JQReUmBheeCq+S9YavcnMMHWqx3S0jHNXWIM1kQDxB9cyfSycpVvjfrKcIS8Mh5N3hmu/YKo4Iag9g2Kw==
-  dependencies:
-    "@hapi/hoek" "^11.0.2"
-
-"@hapi/boom@^10.0.1":
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/@hapi/boom/-/boom-10.0.1.tgz#ebb14688275ae150aa6af788dbe482e6a6062685"
-  integrity sha512-ERcCZaEjdH3OgSJlyjVk8pHIFeus91CjKP3v+MpgBNp5IvGzP2l/bRiD78nqYcKPaZdbKkK5vDBVPd2ohHBlsA==
-  dependencies:
-    "@hapi/hoek" "^11.0.2"
-
-"@hapi/bourne@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@hapi/bourne/-/bourne-3.0.0.tgz#f11fdf7dda62fe8e336fa7c6642d9041f30356d7"
-  integrity sha512-Waj1cwPXJDucOib4a3bAISsKJVb15MKi9IvmTI/7ssVEm6sywXGjVJDhl6/umt1pK1ZS7PacXU3A1PmFKHEZ2w==
-
-"@hapi/cryptiles@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@hapi/cryptiles/-/cryptiles-6.0.1.tgz#7868a9d4233567ed66f0a9caf85fdcc56e980621"
-  integrity sha512-9GM9ECEHfR8lk5ASOKG4+4ZsEzFqLfhiryIJ2ISePVB92OHLp/yne4m+zn7z9dgvM98TLpiFebjDFQ0UHcqxXQ==
-  dependencies:
-    "@hapi/boom" "^10.0.1"
-
-"@hapi/hoek@^11.0.2":
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-11.0.2.tgz#cb3ea547daac7de5c9cf1d960c3f35c34f065427"
-  integrity sha512-aKmlCO57XFZ26wso4rJsW4oTUnrgTFw2jh3io7CAtO9w4UltBNwRXvXIVzzyfkaaLRo3nluP/19msA8vDUUuKw==
-
-"@hapi/iron@^7.0.0":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@hapi/iron/-/iron-7.0.1.tgz#f74bace8dad9340c7c012c27c078504f070f14b5"
-  integrity sha512-tEZnrOujKpS6jLKliyWBl3A9PaE+ppuL/+gkbyPPDb/l2KSKQyH4lhMkVb+sBhwN+qaxxlig01JRqB8dk/mPxQ==
-  dependencies:
-    "@hapi/b64" "^6.0.1"
-    "@hapi/boom" "^10.0.1"
-    "@hapi/bourne" "^3.0.0"
-    "@hapi/cryptiles" "^6.0.1"
-    "@hapi/hoek" "^11.0.2"
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
@@ -1380,6 +1338,11 @@ jws@^3.2.2:
     jwa "^1.4.1"
     safe-buffer "^5.0.1"
 
+jwt-decode@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
+  integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
+
 language-subtag-registry@~0.3.2:
   version "0.3.22"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.22.tgz#2e1500861b2e457eba7e7ae86877cbd08fa1fd1d"
@@ -1536,13 +1499,6 @@ next@12.2.4:
     "@next/swc-win32-arm64-msvc" "12.2.4"
     "@next/swc-win32-ia32-msvc" "12.2.4"
     "@next/swc-win32-x64-msvc" "12.2.4"
-
-node-json-db@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/node-json-db/-/node-json-db-2.2.0.tgz#b41b20fde20777a67af2fa4af6c4163de39a0284"
-  integrity sha512-GBuXPjItZ+XivMxR7bhSjVeXKiHZKRN/HbvqrwVemV6V5atcnIIZbg2J2vJHE6RYHydtPCJoUy05YaK4wQO0TA==
-  dependencies:
-    rwlock "^5.0.0"
 
 object-assign@^4.1.1:
   version "4.1.1"
@@ -1773,11 +1729,6 @@ run-parallel@^1.1.9:
   integrity sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==
   dependencies:
     queue-microtask "^1.2.2"
-
-rwlock@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/rwlock/-/rwlock-5.0.0.tgz#888d6a77a3351cc1a209204ef2ee1722093836cf"
-  integrity sha512-XgzRqLMfCcm9QfZuPav9cV3Xin5TRcIlp4X/SH3CvB+x5D2AakdlEepfJKDd8ByncvfpcxNWdRZVUl38PS6ZJg==
 
 safe-array-concat@^1.0.0:
   version "1.0.0"

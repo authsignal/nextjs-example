@@ -7,16 +7,8 @@ export default function SignUpPage() {
         onSubmit={async (e) => {
           e.preventDefault();
 
-          const target = e.target as typeof e.target & {
-            email: { value: string };
-          };
-
-          const email = target.email.value;
-
           const { error, url } = await fetch("/api/sign-up", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email }),
           }).then((res) => res.json());
 
           if (error) {
@@ -26,8 +18,6 @@ export default function SignUpPage() {
           }
         }}
       >
-        <label htmlFor="email">Email</label>
-        <input id="email" type="email" name="email" required />
         <button type="submit">Sign up</button>
       </form>
       <div>

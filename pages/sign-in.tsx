@@ -13,10 +13,16 @@ export default function SignInPage() {
 
           const email = target.email.value;
 
+          const userId = localStorage.getItem(email);
+
+          if (!userId) {
+            return alert("User not found");
+          }
+
           const { url } = await fetch("/api/sign-in", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email }),
+            body: JSON.stringify({ userId }),
           }).then((res) => res.json());
 
           window.location.href = url;

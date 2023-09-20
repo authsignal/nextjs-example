@@ -1,6 +1,7 @@
+import { serialize } from "cookie";
+import jwtDecode from "jwt-decode";
 import { NextApiRequest, NextApiResponse } from "next";
 import { authsignal } from "../../lib/authsignal";
-import { setSessionCookie } from "../../lib/cookies";
 
 export default async function callback(
   req: NextApiRequest,
@@ -8,22 +9,19 @@ export default async function callback(
 ) {
   const token = req.query.token as string;
 
-  const { state, userId } = await authsignal.validateChallenge({ token });
+  const decodedToken = jwtDecode<any>(token);
+
+  const { state } = await authsignal.validateChallenge({ token });
 
   if (state === "CHALLENGE_SUCCEEDED") {
-    const user = await authsignal.getUser({ userId });
+    const cookie = serialize("auth-session", token, {
+      expires: new Date(decodedToken.exp * 1000),
+      secure: process.env.NODE_ENV === "production",
+      path: "/",
+    });
 
-    const email = user.email!;
-    const now = new Date();
-
-    const expiresIn = now.setTime(now.getTime() + SESSION_DURATION_IN_MS);
-
-    const newSession = { userId, email, expiresIn };
-
-    await setSessionCookie(newSession, res);
+    res.setHeader("Set-Cookie", cookie);
   }
 
   res.redirect("/");
 }
-
-const SESSION_DURATION_IN_MS = 10 * 60 * 1000; // 10 mins
