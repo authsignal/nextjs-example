@@ -1,6 +1,18 @@
 import Link from "next/link";
+import { useAuthsignalClient } from "./hooks/useAuthsignalClient";
+import { useEffect } from "react";
 
 export default function SignInPage() {
+  const authsignalClient = useAuthsignalClient();
+
+  useEffect(() => {
+    authsignalClient?.passkey.signIn({ autofill: true }).then((token) => {
+      if (token) {
+        window.location.href = `/api/callback?token=${token}`;
+      }
+    });
+  }, [authsignalClient]);
+
   return (
     <main>
       <form
@@ -29,7 +41,13 @@ export default function SignInPage() {
         }}
       >
         <label htmlFor="email">Email</label>
-        <input id="email" type="email" name="email" required />
+        <input
+          id="email"
+          type="email"
+          name="email"
+          required
+          autoComplete="username webauthn"
+        />
         <button type="submit">Sign in</button>
       </form>
       <div>

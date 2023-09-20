@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@authsignal/browser": "^0.3.0",
     "@authsignal/node": "0.0.48",
     "cookie": "^0.5.0",
     "jwt-decode": "^3.1.2",
